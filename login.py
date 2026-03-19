@@ -80,18 +80,26 @@ def apagar_conta():
 
 def ver_senhas():
     tentativa = 2
-    print(f"Você tem {tentativa} tentativas")
-    senha_admin2 = input("Digite a senha do Adminstrador para ver as senhas: ")
+    validador_admin = False
 
     for tentativas in range(2):
-        if senha_admin2 != senha_admin: 
-            print("Senha Invalida!!")
+
+        print(f"Você tem {tentativa} tentativas")
+        senha_admin2 = input("Digite a senha do Adminstrador para ver as senhas: ")
+        if senha_admin == senha_admin2: 
+            print("Senha Valida!!")
+            validador_admin = True
+            break
         else: 
             print("Senha Valida!!")
+        tentativa = tentativa - 1
 
-    tentativa = tentativa - 1 
-
-    
+    if validador_admin:
+        with open("cadastro.txt", "r") as arquivo:
+            for linha in arquivo:
+                u, s = linha.strip().split(",")
+                print(f"Usuário{u}")
+                print(f"Senha{s}\n")
 
 def menu(): 
     while True:
@@ -111,6 +119,8 @@ def menu():
             login()
         elif opcao == "3": 
             apagar_conta()
+        elif opcao == "4":
+            ver_senhas()
         elif opcao == "5": 
             print("Sistema finalizado!!!")
             break
