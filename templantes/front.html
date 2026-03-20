@@ -4,9 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="static\login.css">
+    <link rel="stylesheet" href="">
 </head>
 <body>
-    
+<h2>Criar Conta</h2>
+<form action="/criar" method="POST">
+        <input type="text" name="Usuário" placeholder="Criar Usuário" required>
+        <input type="text" name="Senha" placeholder="Criar Senha" required>
+    <button type="submit"> Criar </button>
+</form>
+<h2>Login</h2>
+<form action="/login" method="POST">
+    <input type="text" name="Usuário" placeholder="Digite Usuário" required>
+    <input type="password" name="Senha" placeholder="Digite Senha" required>
+    <button type="submit">Entrar</button>
+</form>
+<h2>Apagar Contas(Admin)</h2>
+<form action="/apagar" method="POST">
+    <input type="text" name="Usuário" placeholder="Digite Usuário" required>
+    <input type="password" name="Senha_Admin" placeholder="Digete senha do Adminstrador" required>
+    <button type="submit">Apagar Conta</button>
+</form>
+
+<form action="/ver"method="POST">
+    <h2>Ver Senhas (Admin)</h2>
+    <input type="password" name="ver" placeholder="Senha do Adminstrador" required>
+    <button type="submit">Ver Senhas</button>
+</form>
+
+
+</form>
 </body>
 </html>
