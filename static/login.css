@@ -1,8 +1,8 @@
-.body{
+body{
     background-color: purple;
 
 }
-.form{
+form{
 
     background-color: black;
     border-color: white;
@@ -10,6 +10,6 @@
 }
 h2{
     color: purple;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 25px;
 }
