@@ -4,25 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 </head>
 <body>
 <h2>Criar Conta</h2>
 <form action="/criar" method="POST">
-        <input type="text" name="Usuário" placeholder="Criar Usuário" required>
-        <input type="text" name="Senha" placeholder="Criar Senha" required>
+        <input type="text" name="usuario" placeholder="Criar Usuário" required>
+        <input type="text" name="senha" placeholder="Criar Senha" required>
     <button type="submit"> Criar </button>
 </form>
 <h2>Login</h2>
 <form action="/login" method="POST">
-    <input type="text" name="Usuário" placeholder="Digite Usuário" required>
-    <input type="password" name="Senha" placeholder="Digite Senha" required>
+    <input type="text" name="usuario" placeholder="Digite Usuário" required>
+    <input type="password" name="senha" placeholder="Digite Senha" required>
     <button type="submit">Entrar</button>
 </form>
 <h2>Apagar Contas(Admin)</h2>
 <form action="/apagar" method="POST">
-    <input type="text" name="Usuário" placeholder="Digite Usuário" required>
-    <input type="password" name="Senha_Admin" placeholder="Digete senha do Adminstrador" required>
+    <input type="text" name="usuario" placeholder="Digite Usuário" required>
+    <input type="password" name="senha_admin" placeholder="Digete senha do Adminstrador" required>
     <button type="submit">Apagar Conta</button>
 </form>
 

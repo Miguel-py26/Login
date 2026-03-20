@@ -1,0 +1,15 @@
+.body{
+    background-color: purple;
+
+}
+.form{
+
+    background-color: black;
+    border-color: white;
+    border-radius: 20px;
+}
+h2{
+    color: purple;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
