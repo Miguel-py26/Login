@@ -1,15 +1,21 @@
 body{
-    background-color: purple;
+    background-color: rgb(255, 255, 255);
 
 }
-form{
+/* CSS DO CRIAR USUARIO */
 
-    background-color: black;
-    border-color: white;
-    border-radius: 20px;
+div.container{
+    display: flex;
+    background-color: rgb(53, 53, 102);
+    align-items: center;
+    margin-top: 0px;
+    margin-left: 25%;
+    margin-right: 25%;
+    border-radius: 15px;
 }
-h2{
-    color: purple;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 25px;
+
+a{
+    align-items: center;
+    color: white;
+
 }

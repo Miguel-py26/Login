@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+<form action="/login" method="POST">
+    <input type="text" name="usuario" placeholder="Digite Usuário" required>
+    <input type="password" name="senha" placeholder="Digite Senha" required>
+    <button type="submit">Entrar</button>
+</form>
+<h2>Apagar Contas(Admin)</h2>
+<form action="/apagar" method="POST">
+    <input type="text" name="usuario" placeholder="Digite Usuário" required>
+    <input type="password" name="senha_admin" placeholder="Digete senha do Adminstrador" required>
+    <button type="submit">Apagar Conta</button>
+</form>
+
+<h2>Ver Senhas (Admin)</h2>
+<form action="/ver"method="POST">
+    <input type="password" name="ver" placeholder="Senha do Adminstrador" required>
+    <button type="submit">Ver Senhas</button>
+</form>
+
+</body>
+</html>
