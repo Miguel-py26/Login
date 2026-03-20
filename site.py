@@ -68,5 +68,8 @@ def ver_senhas():
             resultado += f"{u} - {s}<br>"
 
     return resultado
+
+# RODAR
+
 if __name__ == "__main__":
     site.run(debug=True)
