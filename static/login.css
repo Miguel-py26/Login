@@ -1,21 +1,45 @@
 body{
-    background-color: rgb(255, 255, 255);
-
-}
-/* CSS DO CRIAR USUARIO */
-
-div.container{
+    body {
+    background-color: white;
     display: flex;
-    background-color: rgb(53, 53, 102);
-    align-items: center;
-    margin-top: 0px;
-    margin-left: 25%;
-    margin-right: 25%;
-    border-radius: 15px;
+    justify-content: center; /* centraliza horizontal */
+    align-items: center;     /* centraliza vertical */
+    height: 100vh;
 }
+
+}
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+.container{
+    background-color: #3b3b6d;
+    padding: 20px;
+    border-radius: 15px;
+    width: 400px;
+    text-align: center;
+}
+
 
 a{
     align-items: center;
     color: white;
 
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #6c63ff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #5750d6;
 }
