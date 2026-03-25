@@ -4,26 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="../static/login.css">
 </head>
 <body>
     <h2>Login</h2>
-<form action="/login" method="POST">
-    <input type="text" name="usuario" placeholder="Digite Usuário" required>
-    <input type="password" name="senha" placeholder="Digite Senha" required>
-    <button type="submit">Entrar</button>
-</form>
-<h2>Apagar Contas(Admin)</h2>
-<form action="/apagar" method="POST">
-    <input type="text" name="usuario" placeholder="Digite Usuário" required>
-    <input type="password" name="senha_admin" placeholder="Digete senha do Adminstrador" required>
-    <button type="submit">Apagar Conta</button>
-</form>
+<div class="container">
+    <div class="container00">
+        <form action="/login" method="POST">
+            <input type="text" name="usuario" placeholder="Digite Usuário" required>
+            <input type="password" name="senha" placeholder="Digite Senha" required>
+            <button type="submit">Entrar</button>
+            <a href="../templantes/Login.html">Criar conta.</a>
+        </form>
+    </div>
+</div>
 
+<h2>Apagar Contas(Admin)</h2>
+<div class="container">
+    <div class="container00">
+        <form action="/apagar" method="POST">
+            <input type="text" name="usuario" placeholder="Digite Usuário" required>
+            <input type="password" name="senha_admin" placeholder="Digete senha do Adminstrador" required>
+            <button type="submit">Apagar Conta</button>
+        </form>
+    </div>
+</div>  
 <h2>Ver Senhas (Admin)</h2>
-<form action="/ver"method="POST">
-    <input type="password" name="senha_admin" placeholder="Senha do Adminstrador" required>
-    <button type="submit">Ver Senhas</button>
-</form>
+<div class="container">
+    <div class="container00">
+        <form action="/ver"method="POST">
+            <input type="password" name="senha_admin" placeholder="Senha do Adminstrador" required>
+            <button type="submit">Ver Senhas</button>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
