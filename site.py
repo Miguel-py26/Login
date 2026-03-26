@@ -11,7 +11,7 @@ def home():
 @site.route("/criar", methods=["POST"])
 def criar_conta():
 
-    criar_usuario = request.form["usuario"]
+    criar_usuario = request.form.get("usuario")
     criar_senha = request.form["senha"]
 
     with open ("cadastro.txt", "a") as arquivo:

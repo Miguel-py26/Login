@@ -1,67 +1,105 @@
-body {
-    background-color: rgb(113, 189, 166);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+/* RESET */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-input {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border: none;
-}
-
-.container {
-    background-color: #500880;
-    padding: 35px; /* borda menor */
-    border-radius: 15px;
-    width: 350px;
-
+/* FUNDO */
+body {
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    align-content: center;
+    gap: 30px;
+    padding: 40px 10px;
 }
 
+/* TITULOS */
+h2 {
+    color: white;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* CONTAINER EXTERNO */
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 5px;
+    border-radius: 20px;
+}
+
+/* CARD */
 .container00 {
-    background-color: #653b81;
-    border-radius: 15px;
+    background: white;
     padding: 25px;
-    width: 100%;
-    max-width: 300px;
+    border-radius: 15px;
+    width: 320px;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* joga conteúdo pra cima e baixo */
-    align-items: center;
-
-    height: 220px; /* importante pra funcionar */
+    gap: 15px;
 }
 
-a {
-    color: white;
-    display: block;
-    text-align: center;
-    font-weight: bold;
+/* INPUTS */
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: 0.2s;
 }
 
+input:focus {
+    border-color: #6c63ff;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.4);
+}
+
+/* BOTÕES */
 button {
-    padding: 10px 20px;
+    padding: 12px;
     border: none;
     border-radius: 8px;
-    background-color: #6c63ff;
+    background: linear-gradient(135deg, #6c63ff, #5a54e6);
     color: white;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 button:hover {
-    background-color: #5750d6;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-h1 {
-    font-size: 20px;
-    
+/* LINKS */
+a {
+    text-align: center;
+    text-decoration: none;
+    color: #6c63ff;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* FORM */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 400px) {
+    .container00 {
+        width: 90%;
+    }
 }
