@@ -13,18 +13,20 @@ def home():
 def criar_conta():
 
     criar_usuario = request.form.get("usuario")
-    criar_senha = request.form["senha"]
+    criar_senha = request.form.get("senha")
+
+    conta_cliente = "cliente"
 
     with open ("cadastro.txt", "a") as arquivo:
-        arquivo.write(f"{criar_usuario},{criar_senha}\n")
+        arquivo.write(f"{criar_usuario},{criar_senha},{conta_cliente}\n")
 
     return "Usuário criado com sucesso"
 
 @site.route("/login", methods=["POST"])
 def login():
 
-    login_usuario = request.form["usuario"]
-    login_senha = request.form["senha"]
+    login_usuario = request.form.get("usuario")
+    login_senha = request.form.get("senha")
 
     with open ("cadastro.txt", "r") as arquivo:
         for linha in arquivo:
@@ -38,7 +40,7 @@ def login():
     
 @site.route("/apagar", methods=["POST"])
 def apagar_conta():
-    deletar_usuario = request.form["usuario"]      
+    deletar_usuario = request.form.get("usuario")      
 
     with open("cadastro.txt", "r") as arquivo: 
         listas = arquivo.readlines()
@@ -55,7 +57,7 @@ def apagar_conta():
 
 @site.route("/ver", methods=["POST"])
 def ver_senhas():
-    senha_admin2 = request.form["senha_admin"]
+    senha_admin2 = request.form.get("senha_admin")
     if senha_admin2 != senha_admin:
         return "Senha Invalida!!"    
 
@@ -68,13 +70,7 @@ def ver_senhas():
 
     return resultado
 
-@site.route("/cliente")
-def cliente(): 
-    return render_template("pagina_admin.html")
-
-@site.route("/admin")
-def admin():
-    return render_template("pagina_admin.html")
+# Rota para crirar uma conta admin
 
 @site.route("/criar_admin")
 def criar_admin():
@@ -87,6 +83,17 @@ def criar_admin():
         arquivo.write(f"{criar_admin},{criar_senha_admin},{contadoadmin}")
 
     return "Conta do Adminstrador criada"
+
+# Rota para as paginas de cliente e admin
+
+@site.route("/cliente")
+def cliente(): 
+    return render_template("pagina_admin.html")
+
+@site.route("/admin")
+def admin():
+    return render_template("pagina_admin.html")
+
 # RODAR
 
 if __name__ == "__main__":
