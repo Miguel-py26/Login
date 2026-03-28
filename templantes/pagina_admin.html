@@ -3,19 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>admin</title>
     <link rel="stylesheet" href="../static/login.css">
 </head>
+
 <body>
-<h1>Fazer Login</h1>
+<h1>Admin ABA</h1>
+
+<h2>Deletar Contas</h2>
 <div class="container">
     <div class="container00">
-        <form action="/login" method="POST">
+        <form action="/apagar" method="POST">
             <input type="text" name="usuario" placeholder="Digite Usuário" required>
-            <input type="password" name="senha" placeholder="Digite Senha" required>
-            <button type="submit">Entrar</button>
+            <button type="submit">Apagar Conta</button>
         </form>
-    <a href="../templantes/front.html">Criar conta.</a>
+    </div>
+</div>  
+
+<div class="container">
+    <div class="container00">
+        <p>Contas</p>
+        <form action="/ver"method="POST">
+            <button type="submit">Ver Contas</button>
+        </form>
     </div>
 </div>
 </body>

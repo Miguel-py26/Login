@@ -16,15 +16,21 @@ body {
     align-content: center;
     gap: 30px;
     padding: 40px 10px;
+    justify-content: center;
+    justify-items: center;
 }
 
 /* TITULOS */
 h2 {
-    color: white;
-    font-weight: 600;
+    color: rgb(0, 0, 0);
+    font-weight: 1000;
     margin-top: 10px;
 }
 
+h1{
+    color: black;
+    font-weight: 800;
+}
 /* CONTAINER EXTERNO */
 .container {
     background: rgba(255, 255, 255, 0.1);
@@ -44,7 +50,15 @@ h2 {
     flex-direction: column;
     gap: 15px;
 }
-
+.container00 p{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    margin-top: 10px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
 /* INPUTS */
 input {
     width: 100%;

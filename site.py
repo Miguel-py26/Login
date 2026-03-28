@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 site = Flask(__name__)
 
+tipo = ""
 senha_admin = "Miguel"
 
 @site.route("/")
@@ -30,17 +31,14 @@ def login():
             u, s = linha.strip().split(",")
 
             if login_usuario == u and login_senha == s:
-                return "Login realizado com sucesso!!"
-
-    return "Falha no login!!" 
+                if tipo == "admin":
+                    return redirect("/admin")
+                else: 
+                    return redirect("/cliente")
     
 @site.route("/apagar", methods=["POST"])
 def apagar_conta():
-    deletar_usuario = request.form["usuario"]
-    senha_do_admin = request.form["senha_admin"]
-        
-    if senha_admin != senha_do_admin:
-        return "Senha do Adminstrador incorreta!!"
+    deletar_usuario = request.form["usuario"]      
 
     with open("cadastro.txt", "r") as arquivo: 
         listas = arquivo.readlines()
@@ -51,8 +49,9 @@ def apagar_conta():
 
             if u != deletar_usuario: 
                     arquivo.write(linha)
-
-    return "Usuário deletado com sucesso!!"  
+            return "Usuário deletado com sucesso!!"
+        
+    return"Usuário não encontrado"
 
 @site.route("/ver", methods=["POST"])
 def ver_senhas():
@@ -69,6 +68,25 @@ def ver_senhas():
 
     return resultado
 
+@site.route("/cliente")
+def cliente(): 
+    return render_template("pagina_admin.html")
+
+@site.route("/admin")
+def admin():
+    return render_template("pagina_admin.html")
+
+@site.route("/criar_admin")
+def criar_admin():
+    criar_admin = request.form.get("admin_conta")
+    criar_senha_admin = request.form.get("admin_senha")
+
+    contadoadmin = "admin"
+
+    with open("cadastro.txt", "r") as arquivo: 
+        arquivo.write(f"{criar_admin},{criar_senha_admin},{contadoadmin}")
+
+    return "Conta do Adminstrador criada"
 # RODAR
 
 if __name__ == "__main__":

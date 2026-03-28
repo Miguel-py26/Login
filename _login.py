@@ -1,11 +1,12 @@
 senha_admin = "Miguel"
+usuario_cliente = "cliente"
 def criar_conta():
 
     criar_usuario = input("Nome de usuário: ")
     criar_senha = input("Criar Senha: ")
 
     with open ("cadastro.txt", "a") as arquivo:
-        arquivo.write(f"{criar_usuario}, {criar_senha}\n")
+        arquivo.write(f"{criar_usuario},{criar_senha},{usuario_cliente}\n")
 
     print("Usuário criado com sucesso")
 
