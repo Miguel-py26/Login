@@ -1,2 +1,3 @@
-
 Miguel, 1234,cliente
+ana,1234,cliente
+Migue1221,1234124,admin

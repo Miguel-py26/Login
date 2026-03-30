@@ -102,6 +102,17 @@ def ver_senhas():
                 print(f"Usuário{u}")
                 print(f"Senha{s}\n")
 
+def criar_admin():
+    criar_admin = input("crie usuario para admin: ")
+    criar_senha_admin = input("Crie uma senha para o admin: ")
+ 
+    contadoadmin = "admin"
+
+    with open("cadastro.txt", "a5") as arquivo: 
+        arquivo.write(f"{criar_admin},{criar_senha_admin},{contadoadmin}\n")
+
+    print("Conta do Adminstrador criada")
+
 def menu(): 
     while True:
         print("=====Menu=====\n")
@@ -109,7 +120,8 @@ def menu():
         print("===== 2- Fazer Login =====")
         print("===== 3- Apagar Conta=====")
         print("===== 4- Ver Senha =====")
-        print("===== 5- Sair =====")
+        print("===== 5- criar conta admin =====")
+        print("===== 6- Sair =====")
 
 
         opcao = input("Digite uma opção do menu: ")
@@ -122,13 +134,13 @@ def menu():
             apagar_conta()
         elif opcao == "4":
             ver_senhas()
-        elif opcao == "5": 
+        elif opcao == "5":
+            criar_admin()
+        elif opcao == "6": 
             print("Sistema finalizado!!!")
             break
         else:
             print("Opção invalida: ")
             print("Digite um numero do Menu\n")
             
-
-
 menu()
